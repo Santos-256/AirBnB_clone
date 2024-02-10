@@ -1,5 +1,7 @@
 #!/user/bin/python3
 """Defines the HBnB console of the AirBnB project"""
+
+
 import cmd
 import re
 from models import storage
@@ -19,7 +21,7 @@ def parse(arg):
 
     if curly_braces is None:
         if brackets is None:
-            return [i.strip(",") for index in split(arg)]
+            return [index.strip(",") for index in split(arg)]
         else:
             lexer = split(arg[:brackets.span()[0]])
             retl = [index.strip(",") for index in lexer]
